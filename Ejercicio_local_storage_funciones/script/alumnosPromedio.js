@@ -13,7 +13,10 @@ let alumno2 = new Alumno("Yuri", [3, 5, 3.5, 2])
 // console.log(alumno2.nota)
 // console.log(alumno2.nota.length)
 
-let promedio = 0
+localStorage.setItem("alumno01", JSON.stringify(alumno1))
+localStorage.setItem("alumno02", JSON.stringify(alumno2))
+
+let promedio = 0 
 
 function calcularPromedioNota(notasAPromediar) {
     let suma = 0
@@ -46,6 +49,8 @@ switch (decisionUsuario) {
         console.log(cualPromedioCalcular)
         calcularPromedioNota(cualPromedioCalcular.nota)
         console.log(promedio)
+
+        localStorage.setItem("promedio", promedio)
 
         alert("Tu promedio es " + promedio)
 } 
